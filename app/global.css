@@ -1,0 +1,273 @@
+@import "tailwindcss";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+/*["#ede0d4","#e6ccb2","#ddb892","#b08968","#7f5539","#9c6644"] */
+body {
+  background: #1d1b1b;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.hideScrollbar{
+  overflow-y: hidden;
+}
+@keyframes heroanimation {
+  from {
+    transform: translateY(15%);
+    opacity: 0.1;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@font-face {
+  font-family: HeroFont;
+  src: url(/public/kannada-mn.ttf);
+}
+
+.HeroText {
+  font-family: HeroFont;
+  word-spacing: 0.5rem;
+  animation: heroanimation 0.4s ease-out;
+}
+
+.SearchBar {
+  padding: 0rem 0.6rem;
+  animation: heroanimation 0.4s ease-out;
+}
+
+@keyframes infinteCarousel {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50.2%);
+  }
+}
+
+#categoriesWrapper {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.2rem;
+}
+
+.CategoriesMain {
+  animation: infinteCarousel 41s linear infinite;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+#categoriesWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.CategoryHeader {
+  font-family: HeroFont;
+}
+
+.HeroBg {
+  height: inherit;
+  width: inherit;
+}
+
+.CategoryItems {
+  margin-top: 3rem ;
+  margin-bottom:6rem;
+}
+
+.homeBtn:hover > i {
+  padding-right: 3rem;
+  transition: 0.2s ease-out;
+}
+.homeIcon{
+  margin-left:0.8rem;
+}
+
+@keyframes viewRecipe {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes viewRecipe1 {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(25%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(70%);
+    opacity: 1;
+  }
+}
+
+@keyframes itemtitle {
+  0% {
+    bottom: 0%;
+  }
+  100% {
+    bottom: 9%;
+  }
+}
+
+@keyframes itemtitle1 {
+  0% {
+    bottom: 10%;
+  }
+  100% {
+    bottom: 0%;
+  }
+}
+
+.Item{
+   transform: translateY(50%);
+   opacity: 0;
+   transition:0.2s 0.05s ease-out;
+}
+
+.showItem{
+  transform: translateY(1%);
+  opacity:1;
+}
+
+
+.itemImg {
+  pointer-events: auto;
+}
+
+
+
+.itemImg:hover > .ViewRecipeBtn > button {
+  display: block;
+  animation: viewRecipe 0.2s ease-out;
+}
+.itemImg:not(:hover) > .ViewRecipeBtn > button {
+  animation: viewRecipe1 0.2s ease-out;
+  transition-behavior: allow-discrete;
+  display: none;
+}
+
+.itemImg:hover > .ViewRecipeBtn > span {
+  position: relative;
+  animation: itemtitle 0.2s ease-out;
+  bottom: 10%;
+}
+
+.itemImg:not(:hover) > .ViewRecipeBtn > span {
+  position: relative;
+  animation: itemtitle1 0.2s ease-out;
+  bottom: 0%;
+}
+
+.recipeGrid {
+  display: grid;
+  column-gap: 1rem;
+  grid-template-columns: repeat(3, minmax(21rem, 22.5rem));
+  grid-template-rows: 22rem 10rem;
+  place-content: center;
+  place-items: center;
+  row-gap: 5rem;
+ 
+}
+
+.RecipeImg {
+  overflow: hidden;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  height: 98vh;
+  width: 100%;
+}
+
+.Ingredients,
+.Instructions,
+.Resources {
+  border-radius: 0.8rem;
+  padding-top: 2rem;
+  padding-left: 1rem;
+}
+
+.Instructions {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  text-align: start;
+  height: 90vh;
+  padding-bottom: 2rem;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.Instruction::-webkit-scrollbar{
+  display: none;
+}
+
+.Ingredients {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  width:100%;
+  height: 100%;
+  padding-bottom:1rem;
+  overflow-y: scroll;
+}
+
+.Ingredients::-webkit-scrollbar{
+  display: none;
+}
+
+.Resources {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  height: 11rem;
+  
+  padding-top: 3.2rem;
+}
+
+
+@keyframes modal{
+  0%{
+    transform:scale(60%)
+  }
+  100%{
+    transform:scale(100%)
+  }
+}
+
+@keyframes modalOut{
+  0%{
+    transform:scale(100%)
+  }
+  100%{
+    transform:scale(60%)
+  }
+}
+
+
+.Modal{
+  animation:modal 0.1s ease-out
+}
+
+.ModalOut{
+  animation:modalOut 0.1s ease-out
+}

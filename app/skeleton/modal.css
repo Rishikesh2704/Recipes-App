@@ -1,0 +1,14 @@
+.Shimmer{
+   background: linear-gradient(90deg,#535353 40%,#888787 50%,#535353 60%);   
+   background-size: 300%;
+   animation:shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+    from{
+        background-position-x: 100%;
+    }
+    to{
+        background-position-x: 0%;
+    }
+}
