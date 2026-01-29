@@ -10,6 +10,7 @@ async function fetchRecipe(id: number) {
 }
 export default function FetchRecipe({ id }: { id: number }) {
   const recipe = fetchRecipe(id);
+  console.log(typeof recipe)
   return (
       <Suspense >
         <RecipeUi recipe={recipe} />

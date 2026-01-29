@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import CategoryUI from "./CategoryUI";
+import CategoryMealsUI from "./CategoryMealsUI";
 import FetchRecipe from "@/app/Recipe/FetchRecipe";
 
 function getMeals(category: String) {
@@ -19,7 +19,7 @@ export default async function Page({
   const itemsList = getMeals(category);
   return (
       <Suspense fallback={<h1 className="text-white">Loading...</h1>}>
-        <CategoryUI itemsList={itemsList} Category={category} />
+        <CategoryMealsUI itemsList={itemsList} Category={category} />
       </Suspense>
   );
 }

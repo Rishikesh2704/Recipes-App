@@ -1,9 +1,7 @@
-"use client";
-
-import FetchRecipe from "@/app/Recipe/FetchRecipe";
+import { useEffect, useState } from "react";
+import FetchRecipe from "../Recipe/FetchRecipe";
 import Image from "next/image";
 import Link from "next/link";
-import { use, useEffect, useState } from "react";
 
 type itemType = {
   idMeal: number;
@@ -11,34 +9,33 @@ type itemType = {
   strMealThumb: string;
 };
 
-export default function CategoryUI(List: {
-  itemsList: Promise<any>;
-  Category: String;
-}) {
-  const { itemsList, Category } = List;
-  const [modalState, setModalState] = useState<boolean>(false);
-  const [mealId, setMealId] = useState<number>(0);
-  const list = use(itemsList);
-  
-  useEffect(() => {
-  const listItems = document.querySelectorAll(".Item");
 
-   const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        entry.target.classList.toggle('showItem',entry.isIntersecting)
-        if(entry.isIntersecting) observer.unobserve(entry.target)
-      })
-    },
-    {
-      threshold:0.5,
-    }
-  );
-    listItems.forEach((item) => observer.observe(item));
-  },[])
- 
- 
-  return (
-    <section className="CategoryItems h-full w-full flex flex-col items-center justify-center gap-8 ">
+export default function MealsLayout(List: {
+  meals: any[];
+  Category?: String;
+}){
+     const { meals, Category="Search Results" } = List;
+      const [modalState, setModalState] = useState<boolean>(false);
+      const [mealId, setMealId] = useState<number>(0);
+      
+      useEffect(() => {
+      const listItems = document.querySelectorAll(".Item");
+    
+       const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            entry.target.classList.toggle('showItem',entry.isIntersecting)
+            if(entry.isIntersecting) observer.unobserve(entry.target)
+          })
+        },
+        {
+          threshold:0.1,
+        }
+      );
+        listItems.forEach((item) => observer.observe(item));
+      },[])
+     
+    return(
+         <section className="CategoryItems h-full w-full flex flex-col items-center justify-center gap-8 ">
       <Link
         className="homeBtn w-10 h-9 fixed z-10 group left-[50%] grid grid-cols-1 place-items-center  rounded-3xl translate-x-[-50%] top-6 font-medium hover:w-18  text-center ease-out duration-200 bg-[#4bfda4] text-black  leading-[2.2rem]"
         href={"/"}
@@ -53,7 +50,7 @@ export default function CategoryUI(List: {
       </h1>
 
       <ul className="grid grid-cols-7 h-full w-[97vw] place-items-center gap-y-6 ">
-        {list.map((item: itemType) => (
+        {meals.map((item: itemType) => (
           <li
             key={item.idMeal}
             className="Item   h-[12.5rem] w-[12.5rem] bg-[#f4f0f0] rounded-2xl relative duration-200 ease-out "
@@ -84,7 +81,6 @@ export default function CategoryUI(List: {
           </li>
         ))}
       </ul>
-      {/* <div className="Item showItem h-60 w-60 bg-sky-400"></div> */}
       {modalState && (
         <div
           className="h-[1000vh] w-[100vw]  absolute top-0 left-0  flex justify-center items-center   bg-[rgba(0,0,0,0.6)]  "
@@ -100,5 +96,5 @@ export default function CategoryUI(List: {
         </div>
       )}
     </section>
-  );
+    )
 }

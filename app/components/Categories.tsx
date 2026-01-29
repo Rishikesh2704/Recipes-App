@@ -30,7 +30,7 @@ export default async function Categories() {
         {categoriesList&&[...categoriesList,...categoriesList].map((category: category,idx:number) => (
           <div
             key={category?.idCategory+idx}
-            className="w-40 h-10 overflow-hidden relative   hover:bg-emerald-400 duration-200 cursor-pointer ease-out bg-[rgba(255,255,255,0.13)] backdrop-blur-[8px] shadow-[0px_2px_5px_black] border-[1px,solid,rgba(255,255,255,0.2)] rounded-xl text-center flex items-center"
+            className="w-40 h-10 overflow-hidden relative border-1 border-gray-300   hover:bg-emerald-400 duration-200 cursor-pointer ease-out bg-[rgba(0,0,0,0.13)] backdrop-blur-[8px] shadow-[0px_2px_5px_black] border-[1px,solid,rgba(255,255,255,0.2)] rounded-xl text-center flex items-center"
           >
             <figure className="absolute -left-8 flex items-center justify-around">
               <Image

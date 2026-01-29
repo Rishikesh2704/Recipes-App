@@ -10,7 +10,6 @@ export default function Search() {
       className="SearchBar h-10 w-[60vw] bg-white absolute  top-[54%] left-[50%] translate-[-50%] flex z-10  justify-between items-center rounded-[0.6rem] "
       onSubmit={(e) => {
         e.preventDefault();
-        console.log(queryKey);
         router.push(`/Search/${queryKey}`);
       }}
     >
