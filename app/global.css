@@ -10,6 +10,7 @@ body {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  --COLOR:#2bff95;
 }
 
 .hideScrollbar{
@@ -33,7 +34,9 @@ body {
 
 .HeroText {
   font-family: HeroFont;
+  font-size: 2.9rem;
   word-spacing: 0.5rem;
+  color:white;
   animation: heroanimation 0.4s ease-out;
 }
 

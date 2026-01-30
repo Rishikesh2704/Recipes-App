@@ -3,11 +3,16 @@ import CategoryMealsUI from "./CategoryMealsUI";
 import FetchRecipe from "@/app/Recipe/FetchRecipe";
 
 function getMeals(category: String) {
-  return fetch(
+  try{
+     return fetch(
     `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
   )
     .then((data) => data.json())
     .then((items) => items.meals);
+  }catch(err){
+    console.log(err)
+  }
+ 
 }
 
 export default async function Page({
@@ -19,7 +24,7 @@ export default async function Page({
   const itemsList = getMeals(category);
   return (
       <Suspense fallback={<h1 className="text-white">Loading...</h1>}>
-        <CategoryMealsUI itemsList={itemsList} Category={category} />
+        {itemsList&&<CategoryMealsUI itemsList={itemsList} Category={category} />}
       </Suspense>
   );
 }

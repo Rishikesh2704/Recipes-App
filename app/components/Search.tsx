@@ -5,7 +5,9 @@ import { useState } from "react";
 export default function Search() {
   const [queryKey, setQueryKey] = useState<string>();
   const router = useRouter();
+  
   return (
+    <>
     <form
       className="SearchBar h-10 w-[60vw] bg-white absolute  top-[54%] left-[50%] translate-[-50%] flex z-10  justify-between items-center rounded-[0.6rem] "
       onSubmit={(e) => {
@@ -28,5 +30,7 @@ export default function Search() {
         <i className="fa-solid fa-magnifying-glass"></i>
       </button>
     </form>
+    
+    </>
   );
 }

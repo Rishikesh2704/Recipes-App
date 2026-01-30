@@ -45,7 +45,7 @@ export default function MealsLayout(List: {
           <i className="homeIcon fa-solid fa-house"></i>
         </h2>
       </Link>
-      <h1 className=" w-[95vw] text-3xl underline underline-offset-4 decoration-emerald-400 decoration-3">
+      <h1 className=" w-[95vw] text-3xl text-white  underline underline-offset-4 decoration-emerald-400 decoration-3">
         {Category}
       </h1>
 
@@ -92,7 +92,7 @@ export default function MealsLayout(List: {
             }
           }}
         >
-          <FetchRecipe id={mealId} />
+          <FetchRecipe id={mealId}/>
         </div>
       )}
     </section>

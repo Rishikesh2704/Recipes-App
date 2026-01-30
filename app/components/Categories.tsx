@@ -1,4 +1,3 @@
-import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,9 +11,9 @@ type category = {
 export default async function Categories() {
   let categoriesList;
   try {
-    categoriesList = await axios.get(
+    categoriesList = await fetch(
       "https://www.themealdb.com/api/json/v1/1/categories.php"
-    ).then((list) => list.data.categories);
+    ).then((data) => data.json()).then((list) => list.categories);
   } catch (err) {
     console.log(err);
   }
@@ -53,4 +52,3 @@ export default async function Categories() {
   );
 }
 
-// #fbb566

@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { auth } from "../config/firebase";
 
 function HeroSection() {
   const imgHeight = 400;
@@ -11,6 +13,7 @@ function HeroSection() {
     { id: 18, src: "/meal_12.jpg" },
   ];
   return (
+    <>
     <div className="HeroImgs h-[100vh] relative w-[100vw] grid grid-cols-1 col-start-1 col-end-2 row-start-1 row-end-2 overflow-hidden rounded-[0.9rem] ">
       <figure
         className="HeroBg flex row-start-1 row-end-1 justify-center "
@@ -39,6 +42,8 @@ function HeroSection() {
         </h1>
       </span>
     </div>
+     
+    </>
   );
 }
 
