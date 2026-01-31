@@ -3,7 +3,7 @@
 import MealsLayout from "@/app/components/MealsLayout";
 import { use } from "react";
 
-export default function CategoryUI(List: {
+export default function MealsListUI(List: {
   itemsList: Promise<any>;
   Category: String;
 }) {

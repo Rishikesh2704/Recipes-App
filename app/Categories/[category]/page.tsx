@@ -1,6 +1,7 @@
 import { Suspense } from "react";
-import CategoryMealsUI from "./CategoryMealsUI";
+import CategoryMealsUI from "./MealsListUI";
 import FetchRecipe from "@/app/Recipe/FetchRecipe";
+import MealsListUI from "./MealsListUI";
 
 function getMeals(category: String) {
   try{
@@ -15,16 +16,27 @@ function getMeals(category: String) {
  
 }
 
+//  function Meals(category:string) {
+//   try{
+//      return fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.API_KEY}&type=${category}`)
+//     .then((data) => data.json())
+//     .then((li) => li.results)
+//   }catch(err){
+//     console.log(err)
+//   }
+// }
+
 export default async function Page({
   params,
 }: {
-  params: Promise<{ category: string }>;
+  params: Promise<{ category: string }>;  
 }) {
   const category = (await params).category;
   const itemsList = getMeals(category);
+  //  const itemsList = Meals(category)
   return (
       <Suspense fallback={<h1 className="text-white">Loading...</h1>}>
-        {itemsList&&<CategoryMealsUI itemsList={itemsList} Category={category} />}
+        {itemsList&&<MealsListUI itemsList={itemsList} Category={category} />}
       </Suspense>
   );
 }

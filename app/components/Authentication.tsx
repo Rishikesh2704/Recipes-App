@@ -2,38 +2,40 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { getAuth, signOut } from "firebase/auth";
+import { signOut, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../config/firebase";
 
 export default function () {
-  const [isLogged, setIsLogged] = useState<boolean>(false);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  
   useEffect(() => {
-    console.log(auth.currentUser);
-    if (auth.currentUser) setIsLogged(true);
-  }, [auth?.currentUser]);
- 
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setIsLoggedIn(!!user);
+    });
+    return () => unsubscribe();
+  }, []);
   const handleLogout = async () => {
     try{
-          signOut(auth).then(() => setIsLogged(false))
+          signOut(auth).then(() => setIsLoggedIn(false))
     }catch(err){
         console.log(err)
     }
   };
   return (
     <>
-      {!isLogged ? (
+      {!isLoggedIn ? (
         <Link
           href="/Authentication"
-          className="h-10 w-25 bg-emerald-400 font-semibold rounded-2xl text-center absolute top-4 right-8 flex items-center justify-center"
+          className="h-10 w-25 bg-emerald-400 font-semibold  rounded-2xl text-center absolute top-4 right-8 flex items-center justify-center"
         >
-          <span>Sign In</span>
+          <span className="text-black">Log In</span>
         </Link>
       ) : (
         <button
           className="h-10 w-25 bg-emerald-400 font-semibold rounded-2xl text-center absolute top-4 right-8 flex items-center justify-center"
           onClick={handleLogout}
         >
-          <span>Log Out</span>
+          <span className="text-black">Log Out</span>
         </button>
       )}
     </>

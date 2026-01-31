@@ -9,6 +9,13 @@ type itemType = {
   strMealThumb: string;
 };
 
+type MealType = {
+  id: number;
+  image: string;
+  title: string;
+};
+
+
 
 export default function MealsLayout(List: {
   meals: any[];
@@ -37,7 +44,7 @@ export default function MealsLayout(List: {
     return(
          <section className="CategoryItems h-full w-full flex flex-col items-center justify-center gap-8 ">
       <Link
-        className="homeBtn w-10 h-9 fixed z-10 group left-[50%] grid grid-cols-1 place-items-center  rounded-3xl translate-x-[-50%] top-6 font-medium hover:w-18  text-center ease-out duration-200 bg-[#4bfda4] text-black  leading-[2.2rem]"
+        className="homeBtn w-10 h-9 fixed z-10 group left-[50%] grid grid-cols-1 place-items-center  rounded-3xl translate-x-[-50%] top-6 font-medium hover:w-18  text-center ease-out duration-200 bg-(--COLOR) text-black  leading-[2.2rem]"
         href={"/"}
       >
         <i className="fa-solid fa-chevron-left text-center text-lg col-start-1 col-end-2 row-start-1 row-end-2 ease-in-out duration-200" />
@@ -45,7 +52,7 @@ export default function MealsLayout(List: {
           <i className="homeIcon fa-solid fa-house"></i>
         </h2>
       </Link>
-      <h1 className=" w-[95vw] text-3xl text-white  underline underline-offset-4 decoration-emerald-400 decoration-3">
+      <h1 className=" w-[95vw] text-3xl text-white  underline underline-offset-4 decoration-(--COLOR) decoration-3">
         {Category}
       </h1>
 
@@ -58,8 +65,8 @@ export default function MealsLayout(List: {
             <figure className="itemImg h-full w-full group duration-200 ease-out transition-all rounded-2xl grid grid-cols-1 overflow-hidden cursor-pointer text-center  place-items-center">
               <Image
                 className=" h-full w-full rounded-md col-start-1 col-end-2 row-start-1 row-end-2"
-                height={150}
-                width={150}
+                height={250}
+                width={250}
                 src={item.strMealThumb}
                 alt=""
               />
@@ -67,7 +74,7 @@ export default function MealsLayout(List: {
               <figcaption className="ViewRecipeBtn h-full  w-full col-start-1 flex flex-col items-center justify-center hover: col-end-2 row-start-1 row-end-2 ">
                 <span className="text-xl font-semibold">{item.strMeal}</span>
                 <button
-                  className=" transition-discrete col-start-1 col-end-2 row-start-1 row-end-2 text-[1.2rem] font-[550] italic bg-emerald-300 rounded-md w-[80%] cursor-pointer"
+                  className=" transition-discrete col-start-1 col-end-2 row-start-1 row-end-2 text-[1.2rem] font-[550] italic bg-(--COLOR) rounded-md w-[80%] cursor-pointer"
                   onClick={(e) => {
                     document.body.classList.add("hideScrollbar");
                     setModalState(true);

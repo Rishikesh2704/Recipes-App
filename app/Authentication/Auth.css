@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   position: relative;
 }
 .AuthForm {
@@ -89,7 +89,7 @@ button {
   height: 3rem;
   width: 60%;
   border-radius: 0.8rem;
-  background-color: rgb(36, 205, 95);
+  background-color: var(--COLOR);
   margin-bottom: 1rem;
 }
 
@@ -101,22 +101,22 @@ button {
 }
 
 .OtherLogin {
-  height: 0.5rem;
+  height: 0.2rem;
   width: 80%;
-  margin-top: 1.5rem;
   margin-bottom: 1rem;
   position: absolute;
-  bottom: 1rem;
+  bottom: 3.5rem;
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items:center;
+  gap:0.5rem;
 }
-.loginWithStyle {
+.loginWith {
   height: 0.5rem;
   width: 80%;
   margin-top: 0.8rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
   position: absolute;
   bottom: 1rem;
   display: grid;
@@ -141,4 +141,16 @@ button {
   left:5rem;
   font-size: 0.9rem;
   background-color: white;
+}
+
+
+.CreateAccBtn{
+  height:0.5rem;
+  width:fit-content;
+  color:rgb(77, 200, 248)
+}
+
+.CreateAccBtn:hover{
+  color:rgb(44, 186, 242)
+
 }

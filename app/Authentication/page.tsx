@@ -3,12 +3,17 @@ import Link from "next/link";
 import "./Auth.css";
 import { useState } from "react";
 import { auth, googleProvider } from "../config/firebase";
-import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from "firebase/auth";
 import { useRouter } from "next/navigation";
 
 export default function page() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [signIn, setSignIn] = useState<boolean>(false);
   const router = useRouter();
 
   const createUser = async () => {
@@ -29,9 +34,24 @@ export default function page() {
     }
   };
 
+  const login = async () => {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      return true;
+    } catch (err) {
+      console.log(err);
+      return false;
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const user = await createUser();
+    let user = false;
+    if (signIn) {
+      user = await createUser();
+    } else {
+      user = await login();
+    }
     if (user) {
       router.push("/");
     }
@@ -51,7 +71,7 @@ export default function page() {
       </Link>
       <div className="AuthWrapper ">
         <form className="AuthForm" onSubmit={(e) => handleSubmit(e)}>
-          <h1>Create Account</h1>
+          <h1>{signIn ? "Create Account" : "Login"}</h1>
           <div className="InputContainer">
             <label htmlFor="Email">Email</label>
             <div className="InputWrapper">
@@ -86,16 +106,23 @@ export default function page() {
           </div>
 
           <button type="submit" className="submitBtn">
-            Submit
+            {signIn ? "Sign In" : "Log In"}
           </button>
         </form>
+
         <div className="OtherLogin">
-          <div className="loginWithStyle">
+          <div className="loginWith">
             <div className="line"></div>
             <p className="LineText">Login With</p>
           </div>
           <button className="googleBtn" onClick={signInWithGoogle}>
             <i className="fa-brands fa-google"></i>
+          </button>
+          <button
+            className="CreateAccBtn"
+            onClick={() => setSignIn((prev) => !prev)}
+          >
+            {!signIn ? "create account" : "login"}
           </button>
         </div>
       </div>

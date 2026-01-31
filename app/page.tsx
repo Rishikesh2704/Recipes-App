@@ -2,7 +2,6 @@ import Link from "next/link";
 import Categories from "./components/Categories";
 import HeroSection from "./components/HeroSection";
 import Search from "./components/Search";
-import Authentication from "./components/Authentication";
 
 export default function Home() {
   return (
@@ -10,7 +9,6 @@ export default function Home() {
       <HeroSection/>
       <Search />
       <Categories/>
-      <Authentication/>
     </main>
   )
 } 
