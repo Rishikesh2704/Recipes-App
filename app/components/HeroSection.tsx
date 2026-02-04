@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-import { auth } from "../config/firebase";
 
 function HeroSection() {
   const imgHeight = 400;
@@ -14,35 +12,32 @@ function HeroSection() {
   ];
   return (
     <>
-    <div className="HeroImgs h-[100vh] relative w-[100vw] grid grid-cols-1 col-start-1 col-end-2 row-start-1 row-end-2 overflow-hidden rounded-[0.9rem] ">
-      <figure
-        className="HeroBg flex row-start-1 row-end-1 justify-center "
-        aria-hidden
-      >
-        {bgImagesSrc.map((img) => (
-          <Image
-            key={img.id}
-            className="object-cover"
-            height={imgHeight}
-            width={imgWidth}
-            alt=""
-            src={img.src}
-            preload
-          ></Image>
-        ))}
-        
-      </figure>
+      <div className="HeroImgs h-[100vh] relative w-[100vw] grid grid-cols-1 col-start-1 col-end-2 row-start-1 row-end-2 overflow-hidden rounded-[0.9rem] ">
+        <figure
+          className="HeroBg flex row-start-1 row-end-1 justify-center "
+          aria-hidden
+        >
+          {bgImagesSrc.map((img) => (
+            <Image
+              key={img.id}
+              className="object-cover"
+              height={imgHeight}
+              width={imgWidth}
+              alt=""
+              src={img.src}
+              preload
+            ></Image>
+          ))}
+        </figure>
 
-      <div className="h-[inherit] w-[inherit] row-start-1 row-end-2  bg-[rgba(0,0,0,0.5)] "></div>
+        <div className="h-[inherit] w-[inherit] row-start-1 row-end-2  bg-[rgba(0,0,0,0.5)] "></div>
 
-      <span className="h-[10rem] w-[50%]  z-10 text-center absolute left-[50%] top-[40%] translate-[-50%] grid  place-content-center place">
-        <h1 className="HeroText text-5xl text-white text-shadow-2xl ">
-          KNOW THE RECIPES OF YOU{" "}
-          FAVORITE DISHES
-        </h1>
-      </span>
-    </div>
-     
+        <span className="h-[10rem] w-[60%]  z-10 text-center absolute left-[50%] top-[40%] translate-[-50%] grid  place-content-center place">
+          <h1 className="HeroText text-5xl text-white text-shadow-2xl ">
+            KNOW THE RECIPES OF YOU FAVORITE DISHES
+          </h1>
+        </span>
+      </div>
     </>
   );
 }

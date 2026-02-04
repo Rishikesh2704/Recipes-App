@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import FetchRecipe from "../Recipe/FetchRecipe";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,34 +15,31 @@ type MealType = {
   title: string;
 };
 
+export default function MealsLayout(List: { meals: any[]; Category?: String }) {
+  const { meals, Category = "Search Results" } = List;
+  const [modalState, setModalState] = useState<boolean>(false);
+  const [mealId, setMealId] = useState<number>(0);
+  const withoutLoginCount = useRef<number>(0);
 
+  useEffect(() => {
+    const listItems = document.querySelectorAll(".Item");
 
-export default function MealsLayout(List: {
-  meals: any[];
-  Category?: String;
-}){
-     const { meals, Category="Search Results" } = List;
-      const [modalState, setModalState] = useState<boolean>(false);
-      const [mealId, setMealId] = useState<number>(0);
-      
-      useEffect(() => {
-      const listItems = document.querySelectorAll(".Item");
-    
-       const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            entry.target.classList.toggle('showItem',entry.isIntersecting)
-            if(entry.isIntersecting) observer.unobserve(entry.target)
-          })
-        },
-        {
-          threshold:0.1,
-        }
-      );
-        listItems.forEach((item) => observer.observe(item));
-      },[])
-     
-    return(
-         <section className="CategoryItems h-full w-full flex flex-col items-center justify-center gap-8 ">
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle("showItem", entry.isIntersecting);
+          if (entry.isIntersecting) observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.1,
+      },
+    );
+    listItems.forEach((item) => observer.observe(item));
+  }, []);
+
+  return (
+    <section className="CategoryItems h-full w-full flex flex-col items-center justify-center gap-8 ">
       <Link
         className="homeBtn w-10 h-9 fixed z-10 group left-[50%] grid grid-cols-1 place-items-center  rounded-3xl translate-x-[-50%] top-6 font-medium hover:w-18  text-center ease-out duration-200 bg-(--COLOR) text-black  leading-[2.2rem]"
         href={"/"}
@@ -77,6 +74,7 @@ export default function MealsLayout(List: {
                   className=" transition-discrete col-start-1 col-end-2 row-start-1 row-end-2 text-[1.2rem] font-[550] italic bg-(--COLOR) rounded-md w-[80%] cursor-pointer"
                   onClick={(e) => {
                     document.body.classList.add("hideScrollbar");
+                    withoutLoginCount.current++;
                     setModalState(true);
                     setMealId(item.idMeal);
                   }}
@@ -99,9 +97,9 @@ export default function MealsLayout(List: {
             }
           }}
         >
-          <FetchRecipe id={mealId}/>
+          <FetchRecipe id={mealId} withoutLoginCount={withoutLoginCount}/>
         </div>
       )}
     </section>
-    )
+  );
 }
