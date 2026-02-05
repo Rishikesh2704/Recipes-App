@@ -26,16 +26,16 @@ export default function () {
       {!isLoggedIn ? (
         <Link
           href="/Authentication"
-          className="h-10 w-25 bg-emerald-400 font-semibold  rounded-2xl text-center absolute top-4 right-8 flex items-center justify-center"
+          className="h-10 w-25 bg-emerald-400 cursor-pointer font-semibold  rounded-2xl text-center absolute top-4 right-8 flex items-center justify-center"
         >
           <span className="text-black">Log In</span>
         </Link>
       ) : (
         <button
-          className="h-10 w-25 bg-emerald-400 font-semibold rounded-2xl text-center absolute top-4 right-8 flex items-center justify-center"
+          className="h-10 w-25 bg-emerald-400 cursor-pointer font-semibold rounded-2xl text-center absolute top-4 right-8 flex items-center justify-center"
           onClick={handleLogout}
         >
-          <span className="text-black">Log Out</span>
+          <span className="text-black ">Log Out</span>
         </button>
       )}
     </>

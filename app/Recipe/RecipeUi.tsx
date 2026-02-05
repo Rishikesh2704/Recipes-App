@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { use } from "react";
 import Modal from "../skeleton/Modal";
+import { auth } from "../config/firebase";
 
 export default function RecipeUi({
   recipe,
@@ -59,7 +60,7 @@ export default function RecipeUi({
     .filter((arr: string) => arr);
   return (
     <section className="Modal w-fit h-fit  grid grid-cols-1 fixed  top-[50%] left-[50%] translate-[-50%]  place-items-center z-1">
-      {!(withoutLoginCount.current > 3) ? (
+      {(auth.currentUser || withoutLoginCount.current<=3) ? (
         <div className="recipeGrid  h-[98vh] relative w-[74vw]">
           <figure className="RecipeImg   ">
             <Image
@@ -134,15 +135,15 @@ export default function RecipeUi({
             </div>
           </div>
         </div>
-      ) : (
-        <div className="recipeGrid  h-[98vh] relative w-[74vw]">
+      ):
+         (<div className="recipeGrid  h-[98vh] relative w-[74vw]">
           <figure className="RecipeImg   ">
             <Image
               className="rounded-2xl  h-[199vh] w-full -z-1"
               height={700}
               width={400}
               src={MealImage}
-              alt=""
+              alt="" 
             />
           </figure>
           <div className="Cover h-full w-full bg-[rgba(0,0,0,0.6)] z-0  absolute rounded-xl "></div>
@@ -150,8 +151,8 @@ export default function RecipeUi({
             <i className="fa-solid fa-lock"></i>
             <span>Login To View Recipe</span>
           </div>
-        </div>
-      )}
+        </div>)
+      }
     </section>
   );
 }

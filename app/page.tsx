@@ -7,10 +7,9 @@ import ListSkeleton from "./skeleton/ListSkeleton";
 export default function Home() {
   return (
     <main className="h-fit w-full grid grid-cols-1 grid-rows-1 place-items-end-safe">
-      {/* <HeroSection/>
+      <HeroSection/>
       <Search />
-      <Categories/> */}
-      <ListSkeleton/>
+      <Categories/>
     </main>
   )
 } 

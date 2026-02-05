@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import FetchRecipe from "../Recipe/FetchRecipe";
 import Image from "next/image";
 import Link from "next/link";
+import { auth } from "../config/firebase";
 
 type itemType = {
   idMeal: number;
@@ -39,7 +40,7 @@ export default function MealsLayout(List: { meals: any[]; Category?: String }) {
   }, []);
 
   return (
-    <section className="CategoryItems h-full w-full flex flex-col items-center justify-center gap-8 ">
+    <main className="CategoryItems h-full w-full flex flex-col items-center justify-center gap-8 " >
       <Link
         className="homeBtn w-10 h-9 fixed z-10 group left-[50%] grid grid-cols-1 place-items-center  rounded-3xl translate-x-[-50%] top-6 font-medium hover:w-18  text-center ease-out duration-200 bg-(--COLOR) text-black  leading-[2.2rem]"
         href={"/"}
@@ -47,6 +48,7 @@ export default function MealsLayout(List: { meals: any[]; Category?: String }) {
         <i className="fa-solid fa-chevron-left text-center text-lg col-start-1 col-end-2 row-start-1 row-end-2 ease-in-out duration-200" />
         <h2 className=" w-4 h-full col-start-1 col-end-2 row-start-1 font-[550] text-[1.05rem]  italic relative right-3 row-end-2 opacity-0 group-hover:opacity-100 group-hover:right-0 duration-200 ease-out ">
           <i className="homeIcon fa-solid fa-house"></i>
+          <p className="hidden">Home</p>
         </h2>
       </Link>
       <h1 className=" w-[95vw] text-3xl text-white  underline underline-offset-4 decoration-(--COLOR) decoration-3">
@@ -65,16 +67,16 @@ export default function MealsLayout(List: { meals: any[]; Category?: String }) {
                 height={250}
                 width={250}
                 src={item.strMealThumb}
-                alt=""
+                alt={item.strMeal+item.idMeal}
               />
               <div className=" h-full w-full col-start-1 col-end-2 row-start-1 rounded-md row-end-2 bg-[rgba(0,0,0,0.45)]"></div>
               <figcaption className="ViewRecipeBtn h-full  w-full col-start-1 flex flex-col items-center justify-center hover: col-end-2 row-start-1 row-end-2 ">
-                <span className="text-xl font-semibold">{item.strMeal}</span>
+                <span className="text-xl font-semibold bg-transparent">{item.strMeal}</span>
                 <button
                   className=" transition-discrete col-start-1 col-end-2 row-start-1 row-end-2 text-[1.2rem] font-[550] italic bg-(--COLOR) rounded-md w-[80%] cursor-pointer"
                   onClick={(e) => {
                     document.body.classList.add("hideScrollbar");
-                    withoutLoginCount.current++;
+                    if(!auth.currentUser)withoutLoginCount.current++;
                     setModalState(true);
                     setMealId(item.idMeal);
                   }}
@@ -100,6 +102,6 @@ export default function MealsLayout(List: { meals: any[]; Category?: String }) {
           <FetchRecipe id={mealId} withoutLoginCount={withoutLoginCount}/>
         </div>
       )}
-    </section>
+    </main>
   );
 }
