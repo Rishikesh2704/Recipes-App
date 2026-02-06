@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import FetchRecipe from "../../recipe/FetchRecipe";
 import Image from "next/image";
 import Link from "next/link";
 import { auth } from "../../config/firebase";
 import './layout.css'
 import './responsive.css'
+import FetchRecipe from "@/app/recipe/FetchRecipe";
 
 type itemType = {
   idMeal: number;
