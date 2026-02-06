@@ -5,7 +5,7 @@ import Link from "next/link";
 import { auth } from "../../config/firebase";
 import './layout.css'
 import './responsive.css'
-import FetchRecipe from "@/app/recipe/FetchRecipe";
+import FetchRecipe from "@/app/Recipe/FetchRecipe";
 
 type itemType = {
   idMeal: number;
