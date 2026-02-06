@@ -1,13 +1,11 @@
-import Link from "next/link";
-import Categories from "./components/Categories";
-import HeroSection from "./components/HeroSection";
-import Search from "./components/Search";
-import ListSkeleton from "./skeleton/ListSkeleton";
+import Categories from "./components/Home/Categories";
+import HeroBg from "./components/Home/HeroBg";
+import Search from "./components/Home/Search";
 
 export default function Home() {
   return (
     <main className="h-fit w-full grid grid-cols-1 grid-rows-1 place-items-end-safe">
-      <HeroSection/>
+      <HeroBg/>
       <Search />
       <Categories/>
     </main>

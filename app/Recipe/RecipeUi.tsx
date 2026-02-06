@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { use } from "react";
-import Modal from "../skeleton/Modal";
 import { auth } from "../config/firebase";
+import './recipe.css'
 
 export default function RecipeUi({
   recipe,

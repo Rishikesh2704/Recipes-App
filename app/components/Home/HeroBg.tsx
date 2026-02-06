@@ -20,12 +20,12 @@ function HeroSection() {
           {bgImagesSrc.map((img) => (
             <Image
               key={img.id}
-              className="object-cover"
+              className="object-cover w-[330px] h-screen"
               height={imgHeight}
               width={imgWidth}
               alt=""
               src={img.src}
-              preload
+              priority
             ></Image>
           ))}
         </figure>

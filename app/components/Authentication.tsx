@@ -25,14 +25,14 @@ export default function () {
     <>
       {!isLoggedIn ? (
         <Link
-          href="/Authentication"
-          className="h-10 w-25 bg-emerald-400 cursor-pointer font-semibold  rounded-2xl text-center absolute top-4 right-8 flex items-center justify-center"
+          href="/authentication"
+          className="h-10 w-25 bg-emerald-400  max-md:h-7 max-md:w-17 max-md:text-[0.9rem] cursor-pointer font-semibold  rounded-2xl text-center absolute top-4 right-8 flex items-center justify-center"
         >
           <span className="text-black">Log In</span>
         </Link>
       ) : (
         <button
-          className="h-10 w-25 bg-emerald-400 cursor-pointer font-semibold rounded-2xl text-center absolute top-4 right-8 flex items-center justify-center"
+          className="h-10 w-25 bg-emerald-400 cursor-pointer  max-md:h-7 max-md:w-17 max-md:text-[0.9rem] font-semibold rounded-2xl text-center absolute top-4 right-8 flex items-center justify-center"
           onClick={handleLogout}
         >
           <span className="text-black ">Log Out</span>

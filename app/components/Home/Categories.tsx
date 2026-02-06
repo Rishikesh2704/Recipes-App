@@ -42,7 +42,7 @@ export default async function Categories() {
       id="categoriesWrapper"
       className="CategoriesMain h-fit gap-3 relative  flex  col-start-1 col-end-2 row-start-1 row-end-2 overflow-x-scroll  "
     >
-     {categoriesList &&
+      {categoriesList &&
         [...categoriesList, ...categoriesList].map(
           (category: category, idx: number) => (
             <div
@@ -51,13 +51,13 @@ export default async function Categories() {
             >
               <figure className="absolute -left-8 flex items-center justify-around">
                 <Image
-                  className="categoryImg"
+                  className="categoryImg h-[80px] w-[80px]  "
                   src={category.strCategoryThumb}
                   height={80}
                   width={80}
                   alt=""
                 />
-                <Link href={`/Categories/${category.strCategory}`}>
+                <Link href={`/categories/${category.strCategory}`}>
                   <figcaption className="text-white min-w-28 text-shadow-[0px_2px_10px_black]  rounded-md ">
                     {category.strCategory}
                   </figcaption>
@@ -69,9 +69,6 @@ export default async function Categories() {
     </section>
   );
 }
-
-
-
 
 //  <div className=" h-fit w-fit  flex gap-4 hover:">
 //         {[...categories, ...categories].map((category: string, idx: number) => (

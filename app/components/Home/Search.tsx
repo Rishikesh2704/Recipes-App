@@ -9,10 +9,10 @@ export default function Search() {
   return (
     <>
     <form
-      className="SearchBar h-10 w-[60vw] bg-white absolute  top-[54%] left-[50%] translate-[-50%] flex z-10  justify-between items-center rounded-[0.6rem] "
+      className="SearchBar h-10 w-[60vw] bg-white absolute  top-[56%] left-[50%] translate-[-50%] flex z-10  justify-between items-center rounded-[0.6rem] "
       onSubmit={(e) => {
         e.preventDefault();
-        router.push(`/Search/${queryKey}`);
+        router.push(`/search/${queryKey}`);
       }}
     >
       <input

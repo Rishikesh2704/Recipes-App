@@ -1,0 +1,82 @@
+
+
+@media screen and (min-width:1300px) and (max-width:1400){
+   .MealsLayout {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 12rem));
+    column-gap: 1.5rem; 
+}
+}
+ 
+@media only screen and (max-width: 1025px) {
+  .MealsLayout {
+    grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .MealsLayout {
+    grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  }
+  .Item {
+    height: 10rem;
+    width: 9.5rem;
+  }
+
+  .ViewRecipeBtn > span {
+    font-size: 0.8rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .ViewRecipeBtn > button {
+    display: block;
+    animation: none !important;
+    font-size: 0.8rem;
+  }
+}
+
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .Item {
+    height: 8rem;
+    width: 7.5rem;
+  }
+
+  .ViewRecipeBtn > span {
+    font-size: 0.8rem;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .ViewRecipeBtn > button {
+    display: block;
+    animation: none !important;
+    font-size: 0.8rem;
+  }
+}
+
+
+@media only screen and (max-width: 480px) {
+  .Item {
+    height: 8rem;
+    width: 7.5rem;
+  }
+
+  .ViewRecipeBtn > span {
+    font-size: 0.8rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  .ViewRecipeBtn > button {
+    display: block;
+    animation: none !important;
+    font-size: 0.8rem;
+  }
+}

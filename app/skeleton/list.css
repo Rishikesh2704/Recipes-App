@@ -1,0 +1,64 @@
+.SkeletonList {
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  column-gap: 1.5rem;
+}
+
+@media screen and (min-width: 1300px) and (max-width: 1400) {
+  .SkeletonList {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 12rem));
+    column-gap: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  .SkeletonList {
+    grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .SkeletonList {
+    grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  }
+  .ItemSkeleton {
+    height: 10rem;
+    width: 9.5rem;
+  }
+
+  .ViewRecipeBtn > span {
+    font-size: 0.8rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  .ViewRecipeBtn > button {
+    display: block;
+    animation: none !important;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .ItemSkeleton {
+    height: 7.5rem;
+    width: 7.5rem;
+  }
+
+ 
+  h1{
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .ItemSkeleton {
+    height: 8rem;
+    width: 7.5rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+}

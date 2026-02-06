@@ -1,0 +1,94 @@
+
+@keyframes viewRecipe {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes viewRecipe1 {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(25%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(70%);
+    opacity: 1;
+  }
+}
+
+@keyframes itemtitle {
+  0% {
+    bottom: 0%;
+  }
+  100% {
+    bottom: 9%;
+  }
+}
+
+@keyframes itemtitle1 {
+  0% {
+    bottom: 10%;
+  }
+  100% {
+    bottom: 0%;
+  }
+}
+
+
+.MealsLayout {
+    grid-template-columns: repeat(auto-fit, minmax(12rem,1fr));
+    column-gap: 1.5rem; 
+}
+
+
+
+.Item{
+   transform: translateY(50%);
+   opacity: 0;
+   transition:0.2s 0.05s ease-out;
+}
+
+.showItem{
+  transform: translateY(1%);
+  opacity:1;
+}
+
+
+.itemImg {
+  pointer-events: auto;
+}
+
+
+@media screen and (min-width:1025px) {
+  
+.itemImg:hover > .ViewRecipeBtn > button {
+  display: block;
+  animation: viewRecipe 0.2s ease-out;
+}
+.itemImg:not(:hover) > .ViewRecipeBtn > button {
+  animation: viewRecipe1 0.2s ease-out;
+  transition-behavior: allow-discrete;
+  display: none;
+}
+
+.itemImg:hover > .ViewRecipeBtn > span {
+  position: relative;
+  animation: itemtitle 0.2s ease-out;
+  bottom: 10%;
+}
+
+.itemImg:not(:hover) > .ViewRecipeBtn > span {
+  position: relative;
+  animation: itemtitle1 0.2s ease-out;
+  bottom: 0%;
+}
+}

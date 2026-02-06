@@ -1,5 +1,5 @@
 "use client";
-import MealsLayout from "@/app/components/MealsLayout";
+import MealsLayout from "@/app/components/MealsLayout/MealsLayout";
 import { use } from "react";
 
 export default function SearchUI({ results }: { results: Promise<any> }) {

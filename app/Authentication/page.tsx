@@ -61,7 +61,7 @@ export default function page() {
     <section className="AuthSection ">
       <div className=" h-[100vh] w-[100vw] absolute z-0 bg-[rgba(0,0,0,0.4)] "></div>
       <Link
-        className="homeBtn w-10 h-9 fixed z-10 group left-[50%] grid grid-cols-1 place-items-center  rounded-3xl translate-x-[-50%] top-6 font-medium hover:w-18  text-center ease-out duration-200 bg-[#4bfda4] text-black  leading-[2.2rem]"
+        className="homeBtn w-10 h-9 fixed z-10 group left-[50%] max-lg:hidden grid grid-cols-1 place-items-center  rounded-3xl translate-x-[-50%] top-6 font-medium hover:w-18  text-center ease-out duration-200 bg-[#4bfda4] text-black  leading-[2.2rem]"
         href={"/"}
       >
         <i className="fa-solid fa-chevron-left text-center text-lg col-start-1 col-end-2 row-start-1 row-end-2 ease-in-out duration-200" />
@@ -113,6 +113,7 @@ export default function page() {
         <div className="OtherLogin">
           <div className="loginWith">
             <div className="line"></div>
+
             <p className="LineText">Login With</p>
           </div>
           <button className="googleBtn" onClick={signInWithGoogle}>
