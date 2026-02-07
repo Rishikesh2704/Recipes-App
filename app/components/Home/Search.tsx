@@ -7,9 +7,14 @@ export default function Search() {
   const router = useRouter();
   
   return (
-    <>
+    <section className="flex flex-col gap-2  absolute  top-[45%] left-[50%] translate-[-50%] justify-center items-center">
+     <span className="h-[10rem] w-[100%]  z-10 text-center  grid  place-content-center place">
+          <h1 className="HeroText text-5xl  text-white text-shadow-2xl ">
+            KNOW THE RECIPES OF YOU FAVORITE DISHES
+          </h1>
+        </span>
     <form
-      className="SearchBar h-10 w-[60vw] bg-white absolute  top-[56%] left-[50%] translate-[-50%] flex z-10  justify-between items-center rounded-[0.6rem] "
+      className="SearchBar h-10 w-[60vw] bg-white flex z-10  justify-between items-center rounded-[0.6rem] "
       onSubmit={(e) => {
         e.preventDefault();
         router.push(`/search/${queryKey}`);
@@ -31,6 +36,6 @@ export default function Search() {
       </button>
     </form>
     
-    </>
+    </section>
   );
 }

@@ -59,10 +59,10 @@ export default function RecipeUi({
     })
     .filter((arr: string) => arr);
   return (
-    <section className="Modal w-fit h-fit  grid grid-cols-1 fixed  top-[50%] left-[50%] translate-[-50%]  place-items-center z-1">
+    <section className="Modal w-[76rem] h-[42rem] bg-red-300  rounded-2xl grid grid-cols-1 fixed  top-[50%] left-[50%] translate-[-50%]  place-items-center z-1">
       {(auth.currentUser || withoutLoginCount.current<=3) ? (
-        <div className="recipeGrid  h-[98vh] relative w-[74vw]">
-          <figure className="RecipeImg   ">
+        <div className="recipeGrid  h-[100%] relative w-full">
+          <figure className="RecipeImg">
             <Image
               className="rounded-2xl  h-[199vh] w-full -z-1"
               height={700}

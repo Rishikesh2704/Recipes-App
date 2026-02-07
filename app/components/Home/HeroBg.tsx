@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Search from "./Search";
 
 function HeroSection() {
   const imgHeight = 400;
@@ -31,12 +32,7 @@ function HeroSection() {
         </figure>
 
         <div className="h-[inherit] w-[inherit] row-start-1 row-end-2  bg-[rgba(0,0,0,0.5)] "></div>
-
-        <span className="h-[10rem] w-[60%]  z-10 text-center absolute left-[50%] top-[40%] translate-[-50%] grid  place-content-center place">
-          <h1 className="HeroText text-5xl text-white text-shadow-2xl ">
-            KNOW THE RECIPES OF YOU FAVORITE DISHES
-          </h1>
-        </span>
+          <Search />
       </div>
     </>
   );

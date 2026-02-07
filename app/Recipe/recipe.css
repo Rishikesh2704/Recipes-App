@@ -19,7 +19,7 @@
   position: absolute;
   top: 0rem;
   left: 0rem;
-  height: 98vh;
+  height: inherit;
   width: 100%;
 }
 

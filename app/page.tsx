@@ -4,10 +4,9 @@ import Search from "./components/Home/Search";
 
 export default function Home() {
   return (
-    <main className="h-fit w-full grid grid-cols-1 grid-rows-1 place-items-end-safe">
-      <HeroBg/>
-      <Search />
-      <Categories/>
+    <main className="h-fit w-full grid grid-cols-1 grid-rows-1 place-items-end-safe overflow-hidden">
+      <HeroBg />
+      <Categories />
     </main>
-  )
-} 
+  );
+}
