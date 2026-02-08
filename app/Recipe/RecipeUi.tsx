@@ -59,7 +59,7 @@ export default function RecipeUi({
     })
     .filter((arr: string) => arr);
   return (
-    <section className="Modal w-[76rem] h-[42rem] bg-red-300  rounded-2xl grid grid-cols-1 fixed  top-[50%] left-[50%] translate-[-50%]  place-items-center z-1">
+    <section className="Modal w-[80vw] h-[42rem] bg-red-300  rounded-2xl grid grid-cols-1 fixed  top-[50%] left-[50%] translate-[-50%]  place-items-center z-1">
       {(auth.currentUser || withoutLoginCount.current<=3) ? (
         <div className="recipeGrid  h-[100%] relative w-full">
           <figure className="RecipeImg">
@@ -73,13 +73,13 @@ export default function RecipeUi({
           </figure>
           <div className="Cover h-full w-full bg-[rgba(0,0,0,0.6)] z-0  absolute rounded-xl "></div>
 
-          <ol className="Instructions z-1 bg-[rgba(0,0,0,0.4)] backdrop-blur-lg  relative ">
-            <h2 className="italic text-xl font-semibold underline underline-offset-3 absolute top-0">
+          <ol className="Instructions z-1 bg-[rgba(0,0,0,0.4)] text-[1.2vmax] backdrop-blur-lg  relative ">
+            <h2 className="italic text-[1.2vmax] font-semibold underline underline-offset-3 absolute top-0">
               Instructions
             </h2>
             {instructionSteps.map((step: string, idx: number) => {
               return (
-                <li key={Math.random()}>
+                <li key={Math.random()} className="text-[1.1vmax]">
                   {" "}
                   {idx + 1}. {step}
                 </li>
@@ -87,37 +87,37 @@ export default function RecipeUi({
             })}
           </ol>
 
-          <ol className="Ingredients z-1  r bg-[rgba(0,0,0,0.4)] backdrop-blur-lg relative ">
-            <h2 className="italic text-xl font-semibold underline underline-offset-3 absolute top-0">
+          <ol className="Ingredients z-1  r bg-[rgba(0,0,0,0.4)] text-[1.2vmax] backdrop-blur-lg relative ">
+            <h2 className="italic    font-semibold underline underline-offset-3 absolute top-0">
               Ingredients
             </h2>
             {Ingredients.map((ingredient: any) => (
-              <li key={Math.random()}>
+              <li key={Math.random()} className="text-[1.1vmax]">
                 {ingredient[0]} - {ingredient[1]}
               </li>
             ))}
           </ol>
 
-          <div className="Resources z-1 bg-[rgba(0,0,0,0.4)] backdrop-blur-lg relative grid grid-cols-2  gap-5">
-            <h2 className="italic absolute top-1 left-4 text-[1.1rem] font-semibold underline underline-offset-3">
+          <div className="Resources z-1 bg-[rgba(0,0,0,0.4)] backdrop-blur-lg text-[1.2vmax] relative grid grid-cols-2  gap-5">
+            <h2 className="italic absolute top-1 left-4  font-semibold underline underline-offset-3">
               {Meal}
             </h2>
-            <p>
+            <p className="text-[1vmax]">
               Category :
               <span className="text-gray-200 font-semibold"> {Category}</span>
             </p>
-            <p>
+            <p className="text-[1vmax]">
               Region :
               <span className="text-gray-200 font-semibold"> {Region}</span>
             </p>
-            <div className="flex gap-[0.2rem]">
+            <div className="flex gap-[0.2rem] text-[1.1vmax] ">
               {Source && (
                 <Link
                   href={Source}
                   target="_blank"
-                  className="hover:text-gray-700"
+                  className="hover:text-gray-700 text-[1.1vmax]"
                 >
-                  <i className="fa-solid text-white fa-newspaper"></i>
+                  <i className="fa-solid text-white fa-newspaper text-[1.1vmax]"></i>
                   &ensp;Source
                 </Link>
               )}
@@ -126,9 +126,10 @@ export default function RecipeUi({
                 <Link
                   href={Youtube}
                   target="_blank"
-                  className="hover:text-red-700"
+                  className="hover:text-red-700 "
+                  
                 >
-                  <i className="fa-brands text-red-500 fa-youtube"></i>
+                  <i className="fa-brands text-red-500 fa-youtube text-[1.1vmax]"></i>
                   &ensp;Video
                 </Link>
               )}
