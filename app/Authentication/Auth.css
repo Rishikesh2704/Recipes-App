@@ -36,11 +36,11 @@
   position: relative;
 }
 
-.AuthSection>h1 {
+.AuthForm>h1 {
   font-size: 2rem;
-  color: black;
+  color: rgb(0, 0, 0);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 550;
+  font-weight: 600;
 }
 
 input {
@@ -93,6 +93,9 @@ button {
   background-color: var(--COLOR);
   margin-bottom: 1rem;
 }
+.submitBtn:active {
+  background-color: rgb(41, 166, 99);
+}
 
 .googleBtn {
   font-size: 1.08rem;
@@ -101,6 +104,9 @@ button {
   color: black;
 }
 
+.googleBtn:active {
+  color: rgb(49, 47, 47);
+}
 .OtherLogin {
   height: fit-content;
   width: 80%;
@@ -152,5 +158,9 @@ button {
 
 .CreateAccBtn:hover{
   color:rgb(44, 186, 242)
+
+}
+.CreateAccBtn:active{
+  color:rgb(21, 181, 245)
 
 }

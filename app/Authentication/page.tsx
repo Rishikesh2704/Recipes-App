@@ -58,22 +58,24 @@ export default function page() {
   };
 
   return (
-    <section className="AuthSection ">
+    <main className="AuthSection ">
       <div className=" h-[100vh] w-[100vw] absolute z-0 bg-[rgba(0,0,0,0.4)] "></div>
       <Link
         className="homeBtn w-10 h-9 fixed z-10 group left-[50%] max-lg:hidden grid grid-cols-1 place-items-center  rounded-3xl translate-x-[-50%] top-6 font-medium hover:w-18  text-center ease-out duration-200 bg-[#4bfda4] text-black  leading-[2.2rem]"
         href={"/"}
+        aria-label="Go to homepage"
       >
         <i className="fa-solid fa-chevron-left text-center text-lg col-start-1 col-end-2 row-start-1 row-end-2 ease-in-out duration-200" />
         <h1 className=" w-4 h-full col-start-1 col-end-2 row-start-1 font-[550] text-[1.05rem]  italic relative right-3 row-end-2 opacity-0 group-hover:opacity-100 group-hover:right-0 duration-200 ease-out ">
           <i className="homeIcon fa-solid fa-house"></i>
+          <p className="hidden">Home</p>
         </h1>
       </Link>
-      <div className="AuthWrapper ">
+      <div className="AuthWrapper " role="group">
         <form className="AuthForm" onSubmit={(e) => handleSubmit(e)}>
           <h1>{signIn ? "Create Account" : "Login"}</h1>
           <div className="InputContainer">
-            <label htmlFor="Email">Email</label>
+            <label htmlFor="Email">Email</label>  
             <div className="InputWrapper">
               <i className="fa-regular fa-envelope"></i>
               <input
@@ -111,13 +113,14 @@ export default function page() {
         </form>
 
         <div className="OtherLogin">
-          <div className="loginWith">
-            <div className="line"></div>
+          <div className="loginWith" aria-hidden >
+            <div className="line" ></div>
 
-            <p className="LineText">Login With</p>
+            <p className="LineText" >Login With</p>
           </div>
-          <button className="googleBtn" onClick={signInWithGoogle}>
+          <button className="googleBtn" onClick={signInWithGoogle} aria-haspopup>
             <i className="fa-brands fa-google"></i>
+            <p className="hidden">Login with google</p>
           </button>
           <button
             className="CreateAccBtn"
@@ -127,6 +130,6 @@ export default function page() {
           </button>
         </div>
       </div>
-    </section>
+    </main>
   );
 }

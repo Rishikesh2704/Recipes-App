@@ -31,7 +31,7 @@ function HeroSection() {
           ))}
         </figure>
 
-        <div className="h-[inherit] w-[inherit] row-start-1 row-end-2  bg-[rgba(0,0,0,0.5)] "></div>
+        <div className="h-[inherit] w-[inherit] row-start-1 row-end-2  bg-[rgba(0,0,0,0.5)] " aria-hidden ></div>
           <Search />
       </div>
     </>

@@ -25,8 +25,8 @@ export default function () {
     <>
       {!isLoggedIn ? (
         <Link
-          href="/authentication"
-          className="h-10 w-25 bg-emerald-400  max-md:h-7 max-md:w-17 max-md:text-[0.9rem] cursor-pointer font-semibold  rounded-2xl text-center absolute top-4 right-8 flex items-center justify-center"
+          href="/Authentication"
+          className="h-10 w-25 bg-emerald-400 hover:bg-emerald-500 active:bg-emerald-600  max-md:h-7 max-md:w-17 max-md:text-[0.9rem] cursor-pointer font-semibold  rounded-2xl text-center absolute top-4 right-8 flex items-center justify-center"
         >
           <span className="text-black">Log In</span>
         </Link>

@@ -7,7 +7,7 @@ export default function Search() {
   const router = useRouter();
   
   return (
-    <section className="flex flex-col gap-2  absolute  top-[45%] left-[50%] translate-[-50%] justify-center items-center">
+    <section className="flex flex-col gap-2  absolute  top-[45%] left-[50%] translate-[-50%] justify-center items-center" aria-label="Search Recipes">
      <span className="h-[10rem] w-[100%]  z-10 text-center  grid  place-content-center place">
           <h1 className="HeroText text-5xl  text-white text-shadow-2xl ">
             KNOW THE RECIPES OF YOU FAVORITE DISHES
@@ -30,7 +30,8 @@ export default function Search() {
       ></input>
       <button
         type="submit"
-        className="text-xl w-[3rem] text-black cursor-pointer"
+        className="text-xl w-[3rem] text-black cursor-pointer hover:text-gray-700 active:text-gray-500"
+      
       >
         <i className="fa-solid fa-magnifying-glass"></i>
       </button>

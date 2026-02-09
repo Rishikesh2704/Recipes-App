@@ -69,11 +69,12 @@ export default function RecipeUi({
               width={400}
               src={MealImage}
               alt=""
+              aria-hidden
             />
           </figure>
-          <div className="Cover h-full w-full bg-[rgba(0,0,0,0.6)] z-0  absolute rounded-xl "></div>
+          <div className="Cover h-full w-full bg-[rgba(0,0,0,0.6)] z-0  absolute rounded-xl" aria-hidden></div>
 
-          <ol className="Instructions z-1 bg-[rgba(0,0,0,0.4)] text-[1.2vmax] backdrop-blur-lg  relative ">
+          <ol className="Instructions z-1 bg-[rgba(0,0,0,0.4)] text-[1.2vmax] backdrop-blur-lg  relative " aria-label="Instructions">
             <h2 className="italic text-[1.2vmax] font-semibold underline underline-offset-3 absolute top-0">
               Instructions
             </h2>
@@ -87,7 +88,7 @@ export default function RecipeUi({
             })}
           </ol>
 
-          <ol className="Ingredients z-1  r bg-[rgba(0,0,0,0.4)] text-[1.2vmax] backdrop-blur-lg relative ">
+          <ol className="Ingredients z-1  r bg-[rgba(0,0,0,0.4)] text-[1.2vmax] backdrop-blur-lg relative " aria-label="Ingredients">
             <h2 className="italic    font-semibold underline underline-offset-3 absolute top-0">
               Ingredients
             </h2>
@@ -98,7 +99,7 @@ export default function RecipeUi({
             ))}
           </ol>
 
-          <div className="Resources z-1 bg-[rgba(0,0,0,0.4)] backdrop-blur-lg text-[1.2vmax] relative grid grid-cols-2  gap-5">
+          <div className="Resources z-1 bg-[rgba(0,0,0,0.4)] backdrop-blur-lg text-[1.2vmax] relative grid grid-cols-2  gap-5" aria-label="Resources">
             <h2 className="italic absolute top-1 left-4  font-semibold underline underline-offset-3">
               {Meal}
             </h2>
@@ -137,7 +138,7 @@ export default function RecipeUi({
           </div>
         </div>
       ):
-         (<div className="recipeGrid  h-[98vh] relative w-[74vw]">
+         (<div className="recipeGrid  h-[98vh] relative w-[74vw]" aria-label="Login To View Recipe">
           <figure className="RecipeImg   ">
             <Image
               className="rounded-2xl  h-[199vh] w-full -z-1"
@@ -145,10 +146,11 @@ export default function RecipeUi({
               width={400}
               src={MealImage}
               alt="" 
+              aria-hidden
             />
           </figure>
-          <div className="Cover h-full w-full bg-[rgba(0,0,0,0.6)] z-0  absolute rounded-xl "></div>
-          <div className="h-full w-full absolute bg-[rgba(0,0,0,0.4)] backdrop-blur-3xl rounded-xl flex justify-center items-center flex-col text-3xl gap-3">
+          <div className="Cover h-full w-full bg-[rgba(0,0,0,0.6)] z-0  absolute rounded-xl " aria-hidden></div>
+          <div aria-label="Lock Image " className="h-full w-full absolute bg-[rgba(0,0,0,0.4)] backdrop-blur-3xl rounded-xl flex justify-center items-center flex-col text-3xl gap-3">
             <i className="fa-solid fa-lock"></i>
             <span>Login To View Recipe</span>
           </div>
