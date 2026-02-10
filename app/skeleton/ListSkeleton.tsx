@@ -8,14 +8,16 @@ export default function ListSkeleton() {
 
   const arrays = Array(21).fill(listElement);
   return (
-    <section className="CategoryItems h-full w-full flex flex-col items-center justify-center gap-4 ">
-      <div className="w-[96vw]  ">
+   
+      <section className="CategoryItems h-full w-full flex flex-col items-center justify-center gap-4 ">
+        <div className="w-[96vw]  ">
         <h1 className="w-40 h-7 Shimmer rounded-md"></h1>
       </div>
       <ul className="SkeletonList grid grid-cols-7 h-full w-[97vw] place-items-center place-content-center gap-y-4 ">
         {...arrays}
       </ul>
-    </section>
+      </section>
+      
   );
 }
   

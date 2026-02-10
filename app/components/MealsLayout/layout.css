@@ -43,6 +43,9 @@
   }
 }
 
+.CategoryItems{
+  margin-right: 3rem;
+}
 
 .MealsLayout {
     grid-template-columns: repeat(auto-fit, minmax(12rem,1fr));

@@ -1,4 +1,5 @@
 "use client";
+import { Sidebar } from "@/app/components/Sidebar";
 import MealsLayout from "@/app/components/MealsLayout/MealsLayout";
 import { use } from "react";
 
@@ -9,6 +10,9 @@ export default function SearchUI({ results }: { results: Promise<any> }) {
     return { idMeal, strMeal, strMealThumb };
   });
   return (
-        <MealsLayout meals={transformedMealsList} />
+     <main className="w-screen flex justify-between ">
+          <Sidebar/>
+          <MealsLayout meals={transformedMealsList}/>
+        </main>
   );
 }

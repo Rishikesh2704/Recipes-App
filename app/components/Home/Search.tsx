@@ -31,7 +31,7 @@ export default function Search() {
       <button
         type="submit"
         className="text-xl w-[3rem] text-black cursor-pointer hover:text-gray-700 active:text-gray-500"
-      
+        aria-label="Search Button"
       >
         <i className="fa-solid fa-magnifying-glass"></i>
       </button>

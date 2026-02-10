@@ -43,7 +43,7 @@ export default function MealsLayout(List: { meals: any[]; Category?: String }) {
   }, []);
 
   return (
-    <main className="CategoryItems h-full w-full flex flex-col items-center justify-center gap-8 "  aria-labelledby="CategoryName">
+    <section className="CategoryItems h-full w-[75%] flex flex-col items-center justify-center gap-8 "  aria-labelledby="CategoryName">
       <Link
         className="homeBtn w-10 h-9 fixed z-10 max-lg:hidden group left-[50%] grid grid-cols-1 place-items-center  rounded-3xl translate-x-[-50%] top-6 font-medium hover:w-18  text-center ease-out duration-200 bg-(--COLOR) text-black  leading-[2.2rem]"
         href={"/"}
@@ -55,11 +55,11 @@ export default function MealsLayout(List: { meals: any[]; Category?: String }) {
           <p className="hidden">Home</p>
         </h2>
       </Link>
-      <h1 id="CategoryName" className=" w-[95vw] text-3xl text-white  underline underline-offset-4 decoration-(--COLOR) decoration-3 " >
+      <h1 id="CategoryName" className=" w-full text-3xl text-white  underline underline-offset-4 decoration-(--COLOR) decoration-3 " >
         {Category}
       </h1>
 
-      <ul className="MealsLayout grid h-full w-[97vw] place-items-center place-content-center gap-y-6 " >
+      <ul className="MealsLayout grid h-full w-full place-items-center place-content-center gap-y-6 " >
         {meals.map((item: itemType) => (
           <li
             key={item.idMeal}
@@ -86,6 +86,7 @@ export default function MealsLayout(List: { meals: any[]; Category?: String }) {
                     setModalState(true);
                     setMealId(item.idMeal);
                   }}
+                  aria-haspopup
                 >
                   View Recipe
                 </button>
@@ -110,6 +111,6 @@ export default function MealsLayout(List: { meals: any[]; Category?: String }) {
           <FetchRecipe id={mealId} withoutLoginCount={withoutLoginCount}/>
         </div>
       )}
-    </main>
+    </section>
   );
 }

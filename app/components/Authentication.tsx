@@ -22,7 +22,7 @@ export default function () {
     }
   };
   return (
-    <>
+    <nav>
       {!isLoggedIn ? (
         <Link
           href="/Authentication"
@@ -38,6 +38,6 @@ export default function () {
           <span className="text-black ">Log Out</span>
         </button>
       )}
-    </>
+    </nav>
   );
 }

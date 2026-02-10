@@ -19,7 +19,7 @@ export default function page() {
   const createUser = async () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      return true;
+      return true
     } catch (err) {
       console.log(err);
       return false;
