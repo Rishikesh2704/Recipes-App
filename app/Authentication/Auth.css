@@ -11,6 +11,7 @@
   background-position-y: -10rem;
 }
 
+
 .AuthWrapper {
   height: 68vh;
   width: 25rem;
@@ -163,4 +164,10 @@ button {
 .CreateAccBtn:active{
   color:rgb(21, 181, 245)
 
+}
+
+@media only screen and (max-width:768px){
+  .AuthSection {
+  background-position-y:0rem;
+}
 }
