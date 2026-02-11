@@ -55,7 +55,7 @@ export default function MealsLayout(List: { meals: any[]; Category?: String }) {
           <p className="hidden">Home</p>
         </h2>
       </Link>
-      <h1 id="CategoryName" className=" w-full text-3xl text-white  underline underline-offset-4 decoration-(--COLOR) decoration-3 " >
+      <h1 id="CategoryName" className=" w-full max-xl:w-[90%] text-3xl text-white  underline underline-offset-4 decoration-(--COLOR) decoration-3 " >
         {Category}
       </h1>
 

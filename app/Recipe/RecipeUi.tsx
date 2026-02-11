@@ -99,8 +99,8 @@ export default function RecipeUi({
             ))}
           </ol>
 
-          <div className="Resources z-1 bg-[rgba(0,0,0,0.4)] backdrop-blur-lg text-[1.2vmax] relative grid grid-cols-2  gap-5" aria-label="Resources">
-            <h2 className="italic absolute top-1 left-4  font-semibold underline underline-offset-3">
+          <div className="Resources z-1 bg-[rgba(0,0,0,0.4)] backdrop-blur-lg text-[1.2vmax] relative grid grid-cols-2  gap-3" aria-label="Resources">
+            <h2 className="italic absolute top-1 left-4 text-[1vmax]  font-semibold underline underline-offset-3">
               {Meal}
             </h2>
             <p className="text-[1vmax]">
