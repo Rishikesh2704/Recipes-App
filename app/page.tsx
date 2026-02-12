@@ -1,6 +1,7 @@
 import Categories from "./components/Home/Categories";
 import HeroBg from "./components/Home/HeroBg";
 import Search from "./components/Home/Search";
+import './global.css'
 
 export default function Home() {
   return (

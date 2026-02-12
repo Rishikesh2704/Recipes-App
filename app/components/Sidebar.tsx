@@ -51,7 +51,7 @@ export function Sidebar() {
         <input
           id="search"
           aria-label="Search Recipe"
-          className="w-[85%] h-fit text-white placeholder:text-white text-[1.05rem] outline-none rounded-[0.4rem] "
+          className="w-[85%] h-fit pl-4 text-white placeholder:text-white text-[1.05rem] outline-none rounded-[0.4rem] "
           type="text"
           placeholder="Search..."
           onChange={(e) => setQueryKey(e.target.value)}
@@ -83,7 +83,7 @@ export function Sidebar() {
                 <div className="w-full h-full bg-[rgba(0,0,0,0.4)] z-1 col-start-1 col-end-1 row-start-1 row-end-1"></div>
                 <Link
                   href={`/categories/${category.strCategory}`}
-                  className=" h-auto w-full col-start-1 absolute z-1 col-end-1 row-start-1 row-end-1 text-white text-shadow-gray-950 text-[1.05rem] font-semibold"
+                  className=" h-auto w-full col-start-1 absolute z-10 col-end-1 row-start-1 row-end-1 text-white text-shadow-gray-950 text-[1.05rem] font-semibold"
                 >
                   <figcaption>{category.strCategory}</figcaption>
                 </Link>

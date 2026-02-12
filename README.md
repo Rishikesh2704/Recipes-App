@@ -15,7 +15,8 @@ app/
     │   ├── MealsLayout/
     │   │   ├── layout.css
     │   │   └── MealsLayout.tsx
-    │   └── Authentication.tsx  
+    │   ├── Authentication.tsx  
+    │   └── Sidebar.tsx
     ├── Config/
     │   └── firebase.ts
     ├── Recipe/
