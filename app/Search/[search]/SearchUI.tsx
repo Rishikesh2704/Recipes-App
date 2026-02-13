@@ -10,9 +10,9 @@ export default function SearchUI({ results }: { results: Promise<any> }) {
     return { idMeal, strMeal, strMealThumb };
   });
   return (
-     <main className="w-screen flex justify-between ">
-          <Sidebar/>
-          <MealsLayout meals={transformedMealsList}/>
-        </main>
+    <main className="w-screen flex justify-between ">
+      <Sidebar />
+      <MealsLayout meals={transformedMealsList} />
+    </main>
   );
 }
