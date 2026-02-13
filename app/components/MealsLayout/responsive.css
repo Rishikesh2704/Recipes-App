@@ -9,7 +9,7 @@
  
 @media only screen and (max-width: 1025px) {
   .MealsLayout {
-    grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
   }
 }
 
@@ -18,8 +18,8 @@
     grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
   }
   .Item {
-    height: 10rem;
-    width: 9.5rem;
+    height: 6rem;
+    width: 10.5rem;
   }
 
   .ViewRecipeBtn > span {
@@ -40,8 +40,8 @@
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   .Item {
-    height: 8rem;
-    width: 7.5rem;
+    height: 5rem;
+    width: 9rem;
   }
 
   .ViewRecipeBtn > span {
@@ -62,7 +62,7 @@
 
 @media only screen and (max-width: 480px) {
   .Item {
-    height: 8rem;
+    height: 4.5rem;
     width: 7.5rem;
   }
 

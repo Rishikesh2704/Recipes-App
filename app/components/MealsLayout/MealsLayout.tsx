@@ -53,10 +53,10 @@ export default function MealsLayout(List: { meals: any[]; Category?: String }) {
         aria-label="go to home page button"
       >
         <i className="fa-solid fa-chevron-left text-center text-lg col-start-1 col-end-2 row-start-1 row-end-2 ease-in-out duration-200" />
-        <h2 className=" w-4 h-full col-start-1 col-end-2 row-start-1 font-[550] text-[1.05rem]  italic relative right-3 row-end-2 opacity-0 group-hover:opacity-100 group-hover:right-0 duration-200 ease-out ">
+        <h1 className=" w-4 h-full col-start-1 col-end-2 row-start-1 font-[550] text-[1.05rem]  italic relative right-3 row-end-2 opacity-0 group-hover:opacity-100 group-hover:right-0 duration-200 ease-out ">
           <i className="homeIcon fa-solid fa-house"></i>
           <p className="hidden">Home</p>
-        </h2>
+        </h1>
       </Link>
       <h1
         id="CategoryName"
@@ -89,9 +89,9 @@ export default function MealsLayout(List: { meals: any[]; Category?: String }) {
 
 
             <div className="flex max-h-[90%] min-h-[70%] w-[50%] flex-col justify-around gap-2 items-center rounded-lg text-center">
-              <span className="text-[1.1vw] h-[70%] overflow-hidden font-semibold group-hover:text-black duration-100 ease-out ">{item.strMeal}</span>
+              <span className="text-[1.1vw] bg-transparent h-[70%] overflow-hidden font-semibold group-hover:text-black duration-100 ease-out ">{item.strMeal}</span>
               <button
-                className="bg-(--COLOR) text-black group-hover:bg-black group-hover:text-white duration-100 ease-out font-semibold h-[1.5rem] cursor-pointer w-35 rounded-md"
+                className="w-[9vmax] max-lg:w-[6vmax]  max-md:h-[2.1vmax] text-[0.9vmax] bg-(--COLOR) text-black group-hover:bg-black group-hover:text-white  duration-100 ease-out font-semibold h-[1.5rem] cursor-pointer  rounded-md"
                 onClick={(e) => {
                   document.body.classList.add("hideScrollbar");
                   if (!auth.currentUser) withoutLoginCount.current++;

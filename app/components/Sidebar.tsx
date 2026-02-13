@@ -17,7 +17,7 @@ export function Sidebar() {
   const [queryKey, setQueryKey] = useState<string>();
   const router = useRouter()
   useEffect(() => {
-    const fetchdata = async () => {
+    const fetchdata = async ():Promise<void> => {
       try {
         const data = await fetch(
           "https://www.themealdb.com/api/json/v1/1/categories.php",
@@ -58,7 +58,7 @@ export function Sidebar() {
         ></input>
         <button
           className="w-fit h-fit text-xl text-white cursor-pointer"
-          aria-label="Search Recipe"
+          aria-label="Search Button"
         >
           <i className="fa-solid fa-magnifying-glass"></i>
         </button>
@@ -68,7 +68,7 @@ export function Sidebar() {
           {categories.map((category: category, idx: number) => (
             <li
               key={category?.idCategory + idx}
-              aria-label={`go to ${category.strCategory}`}
+              aria-label={`go to ${category.strCategory} recipes page `}
               className="w-fit h-10 bg-white relative overflow-hidden hover:bg-(--COLOR) duration-200 ease-out rounded-md text-center "
             >
               <figure className="w-full h-full grid grid-cols-1 place-content-center place-items-center ">
@@ -80,10 +80,10 @@ export function Sidebar() {
                   alt=""
                   aria-hidden
                 />
-                <div className="w-full h-full bg-[rgba(0,0,0,0.4)] z-1 col-start-1 col-end-1 row-start-1 row-end-1"></div>
+                <div className="w-full h-full bg-[rgba(0,0,0,0.4)]  col-start-1 col-end-1 row-start-1 row-end-1"></div>
                 <Link
                   href={`/categories/${category.strCategory}`}
-                  className=" h-auto w-full col-start-1 absolute z-10 col-end-1 row-start-1 row-end-1 text-white text-shadow-gray-950 text-[1.05rem] font-semibold"
+                  className="bg-[rgba(0,0,0,0.02)] h-auto w-full col-start-1 absolute  col-end-1 row-start-1 row-end-1 text-[#ffffff] text-shadow-gray-950 text-[1.05rem] font-semibold"
                 >
                   <figcaption>{category.strCategory}</figcaption>
                 </Link>

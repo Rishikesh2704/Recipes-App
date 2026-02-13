@@ -59,9 +59,9 @@ export default function RecipeUi({
     })
     .filter((arr: string) => arr);
   return (
-    <section className="Modal w-[80vw] h-[42rem]  rounded-2xl grid grid-cols-1 fixed  top-[50%] left-[50%] translate-[-50%]  place-items-center z-30">
+    <section className="Modal w-[80vw] h-[42rem]  rounded-2xl grid grid-cols-1 fixed  top-[50%] left-[50%] translate-[-50%]  place-items-center z-3">
       {(auth.currentUser || withoutLoginCount.current<=3) ? (
-        <div className="recipeGrid  h-[100%] relative w-full">
+        <article className="recipeGrid  h-[100%] relative w-full">
           <figure className="RecipeImg">
             <Image
               className="rounded-2xl  h-[199vh] w-full -z-1"
@@ -75,9 +75,9 @@ export default function RecipeUi({
           <div className="Cover h-full w-full bg-[rgba(0,0,0,0.6)] z-0  absolute rounded-xl" aria-hidden></div>
 
           <ol className="Instructions z-1 bg-[rgba(0,0,0,0.4)] text-[1.2vmax] backdrop-blur-lg  relative " aria-label="Instructions">
-            <h2 className="italic text-[1.2vmax] font-semibold underline underline-offset-3 absolute top-0">
+            <h1 className="italic text-[1.2vmax] font-semibold underline underline-offset-3 absolute top-0">
               Instructions
-            </h2>
+            </h1>
             {instructionSteps.map((step: string, idx: number) => {
               return (
                 <li key={Math.random()} className="text-[1.1vmax]">
@@ -136,7 +136,7 @@ export default function RecipeUi({
               )}
             </div>
           </div>
-        </div>
+        </article>
       ):
          (<div className="recipeGrid  h-[98vh] relative w-[74vw]" aria-label="Login To View Recipe">
           <figure className="RecipeImg   ">
