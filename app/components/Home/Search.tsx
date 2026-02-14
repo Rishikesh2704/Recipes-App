@@ -20,7 +20,7 @@ export default function Search() {
         router.push(`/search/${queryKey}`);
       }}
     >
-      <label htmlFor="recipeSearch hidden">Search Recipe</label>
+      <label htmlFor="recipeSearch" className="hidden">Search Recipe</label>
       <input
         id="recipeSearch"
         aria-label="Search Recipes"

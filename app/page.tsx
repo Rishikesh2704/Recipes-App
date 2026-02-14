@@ -5,7 +5,7 @@ import './global.css'
 
 export default function Home() {
   return (
-    <main className="h-fit w-full grid grid-cols-1 grid-rows-1 place-items-end-safe overflow-hidden">
+    <main className="h-screen w-screen grid grid-cols-1 grid-rows-1 place-items-end-safe overflow-hidden">
       <HeroBg />
       <Categories />
     </main>
