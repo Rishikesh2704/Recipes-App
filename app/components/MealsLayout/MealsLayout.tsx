@@ -54,8 +54,8 @@ export default function MealsLayout(List: { meals: any[]; Category?: String }) {
       >
         <i className="fa-solid fa-chevron-left text-center text-lg col-start-1 col-end-2 row-start-1 row-end-2 ease-in-out duration-200" />
         <h1 className=" w-4 h-full col-start-1 col-end-2 row-start-1 font-[550] text-[1.05rem]  italic relative right-3 row-end-2 opacity-0 group-hover:opacity-100 group-hover:right-0 duration-200 ease-out ">
-          <i className="homeIcon fa-solid fa-house"></i>
-          <p className="hidden">Home</p>
+          <i className="homeIcon fa-solid fa-house hidden"></i>
+          <p >Home</p>
         </h1>
       </Link>
       <h1
