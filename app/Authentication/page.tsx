@@ -16,25 +16,24 @@ export default function page() {
   const [signIn, setSignIn] = useState<boolean>(false);
   const router = useRouter();
 
-  const createUser = async () => {
+  const createUser = async ():Promise<boolean> => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       return true
     } catch (err) {
-      console.log(err);
       return false;
     }
   };
 
-  const signInWithGoogle = async () => {
+  const signInWithGoogle = async ():Promise<void> => {
     try {
       await signInWithPopup(auth, googleProvider);
     } catch (err) {
-      console.log(err);
+      throw new Error("Failed to SignIn with Google!")
     }
   };
 
-  const login = async () => {
+  const login = async ():Promise<boolean> => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       return true;
@@ -44,7 +43,7 @@ export default function page() {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>):Promise<void> => {
     e.preventDefault();
     let user = false;
     if (signIn) {

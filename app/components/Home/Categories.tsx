@@ -17,7 +17,7 @@ export default async function Categories() {
       .then((data) => data.json())
       .then((list) => list.categories);
   } catch (err) {
-    console.log(err);
+    throw new Error("Failed to Fetch Categories List!")
   }
 
   const categories = [

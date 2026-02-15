@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import MealsListUI from "./MealsListUI";
 import ListSkeleton from "@/app/skeleton/ListSkeleton";
 
-function getMeals(category: String) {
+function getMeals(category: String):Promise<any> {
   try {
     return fetch(
       `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`,
@@ -10,11 +10,11 @@ function getMeals(category: String) {
       .then((data) => data.json())
       .then((items) => items.meals);
   } catch (err) {
-    console.log(err);
+    throw new Error("Failed to Fetch Category meals")
   }
 }
 
-function Meals(category: string) {
+function Meals(category: string):Promise<any> {
   try {
     return fetch(
       `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.API_KEY}&type=${category}`,
@@ -22,7 +22,7 @@ function Meals(category: string) {
       .then((data) => data.json())
       .then((li) => li.results);
   } catch (err) {
-    console.log(err);
+    throw new Error("Failed to fetch Meals List")
   }
 }
 

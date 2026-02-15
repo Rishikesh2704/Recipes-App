@@ -2,12 +2,15 @@
 import { Suspense } from "react";
 import RecipeUi from "./RecipeUi";
 
-async function fetchRecipe(id: number) {
-  return fetch(
-    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`,
-  ).then((data) => data.json());
+async function fetchRecipe(id: number): Promise<any> {
+  try {
+    return fetch(
+      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`,
+    ).then((data) => data.json());
+  } catch (err) {
+    throw new Error("Failed To Fetch Recipe!");
+  }
 }
-
 
 // const fetchRecipe = async (id: number) => {
 //   try {
@@ -42,12 +45,17 @@ async function fetchRecipe(id: number) {
 //   }
 // };
 
-
-export default function FetchRecipe({ id , withoutLoginCount }: { id: number, withoutLoginCount:React.RefObject<number> }) {
+export default function FetchRecipe({
+  id,
+  withoutLoginCount,
+}: {
+  id: number;
+  withoutLoginCount: React.RefObject<number>;
+}) {
   const recipe = fetchRecipe(id);
   return (
     <Suspense>
-      <RecipeUi recipe={recipe} withoutLoginCount={withoutLoginCount}/>
+      <RecipeUi recipe={recipe} withoutLoginCount={withoutLoginCount} />
     </Suspense>
   );
 }

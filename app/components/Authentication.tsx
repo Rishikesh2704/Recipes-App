@@ -14,11 +14,11 @@ export default function () {
     });
     return () => unsubscribe();
   }, []);
-  const handleLogout = async () => {
+  const handleLogout = async ():Promise<void> => {
     try{
           signOut(auth).then(() => setIsLoggedIn(false))
     }catch(err){
-        console.log(err)
+        throw new Error('Failed Log Out!')
     }
   };
   return (

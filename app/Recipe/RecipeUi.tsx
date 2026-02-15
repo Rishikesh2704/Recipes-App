@@ -26,7 +26,6 @@ export default function RecipeUi({
 
   let Ingredients: string[][] = [];
   let i = 0;
-  console.log(withoutLoginCount);
 
   Object.entries(data.meals[0])
     .filter(([key, value]) => {

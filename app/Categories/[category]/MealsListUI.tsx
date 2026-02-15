@@ -15,7 +15,6 @@ export default function MealsListUI(List: {
    return(
     <main className="w-screen flex max-md:justify-center justify-between gap-x-2 ">
       <Sidebar/>
-      
       <MealsLayout meals={mealsList} Category={Category}/>
     </main>
    )
