@@ -47,6 +47,8 @@ export default function MealsLayout(List: { meals: any[]; Category?: String }) {
       className="CategoryItems h-full w-[75%] max-md:w-[85%] flex flex-col items-center justify-center gap-8 "
       aria-labelledby="CategoryName"
     >
+     
+
       <Link
         className="homeBtn w-10 h-9 fixed z-10 max-lg:hidden group left-[50%] grid grid-cols-1 place-items-center  rounded-3xl translate-x-[-50%] top-6 font-medium hover:w-18  text-center ease-out duration-200 bg-(--COLOR) text-black  leading-[2.2rem]"
         href={"/"}
@@ -54,8 +56,8 @@ export default function MealsLayout(List: { meals: any[]; Category?: String }) {
       >
         <i className="fa-solid fa-chevron-left text-center text-lg col-start-1 col-end-2 row-start-1 row-end-2 ease-in-out duration-200" />
         <h1 className=" w-4 h-full col-start-1 col-end-2 row-start-1 font-[550] text-[1.05rem]  italic relative right-3 row-end-2 opacity-0 group-hover:opacity-100 group-hover:right-0 duration-200 ease-out ">
-          <i className="homeIcon fa-solid fa-house hidden"></i>
-          <p >Home</p>
+          <i className="homeIcon fa-solid fa-house "></i>
+          <p className="sr-only">Home</p>
         </h1>
       </Link>
       <h1
@@ -72,7 +74,6 @@ export default function MealsLayout(List: { meals: any[]; Category?: String }) {
             className="Item h-[8.5rem] w-[19.5rem] hover:bg-(--COLOR) duration-100 ease-out group flex flex-row-reverse justify-between items-center bg-[#0f0f0f] rounded-[0.6rem] relative "
             aria-label={`${item.strMeal}`}
           >
-
             <figure className="itemImg h-full w-fit flex flex-col rounded-[0.6rem] overflow-hidden  justify-center items-center  ">
               <Image
                 height={450}
@@ -87,9 +88,10 @@ export default function MealsLayout(List: { meals: any[]; Category?: String }) {
               </figcaption>
             </figure>
 
-
             <div className="flex max-h-[90%] min-h-[70%] w-[50%] flex-col justify-around gap-2 items-center rounded-lg text-center">
-              <span className="text-[1.1vw] bg-transparent h-[70%] overflow-hidden font-semibold group-hover:text-black duration-100 ease-out ">{item.strMeal}</span>
+              <span className="text-[1.1vw] bg-transparent h-[70%] overflow-hidden font-semibold group-hover:text-black duration-100 ease-out ">
+                {item.strMeal}
+              </span>
               <button
                 className="w-[8vmax] max-lg:w-[6vmax] max-md:w-[5vmax] max-md:h-[2.1vmax] text-[0.9vmax] max-md:text-[0.7vmax] bg-(--COLOR) text-black group-hover:bg-black group-hover:text-white  duration-100 ease-out font-semibold h-[1.5rem] cursor-pointer  rounded-md"
                 onClick={(e) => {
@@ -103,8 +105,6 @@ export default function MealsLayout(List: { meals: any[]; Category?: String }) {
                 View Recipe
               </button>
             </div>
-
-
           </li>
         ))}
       </ul>

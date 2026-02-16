@@ -33,7 +33,6 @@ export function Sidebar() {
     };
     fetchdata();
   }, []);
-  console.log(categories);
   return (
     <aside className="w-[20vmax] max-md:hidden h-[100vh] relative shadow-md  rounded-r-2xl bg-[#131212] flex flex-col justify-center gap-8 items-center ">
       <form
@@ -44,7 +43,7 @@ export function Sidebar() {
         router.push(`/search/${queryKey}`);
       }}
       >
-        <label htmlFor="search" className="hidden">
+        <label htmlFor="search" className="sr-only">
           Search
         </label>
         <input

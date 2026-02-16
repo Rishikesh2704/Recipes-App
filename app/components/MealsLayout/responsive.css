@@ -1,12 +1,10 @@
-
-
-@media screen and (min-width:1300px) and (max-width:1400){
-   .MealsLayout {
+@media screen and (min-width: 1300px) and (max-width: 1400) {
+  .MealsLayout {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 12rem));
-    column-gap: 1rem; 
+    column-gap: 1rem;
+  }
 }
-}
- 
+
 @media only screen and (max-width: 1025px) {
   .MealsLayout {
     grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
@@ -35,8 +33,9 @@
     animation: none !important;
     font-size: 0.8rem;
   }
-}
 
+ 
+}
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   .Item {
@@ -57,8 +56,10 @@
     animation: none !important;
     font-size: 0.8rem;
   }
+   .CategoryItems {
+    margin-right: 0rem;
+  }
 }
-
 
 @media only screen and (max-width: 480px) {
   .Item {
