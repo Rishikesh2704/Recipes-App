@@ -11,7 +11,6 @@
   background-position-y: -10rem;
 }
 
-
 .AuthWrapper {
   height: 68vh;
   width: 25rem;
@@ -27,6 +26,7 @@
   position: relative;
   padding-bottom: 2rem;
 }
+
 .AuthForm {
   height: 80%;
   width: 100%;
@@ -37,7 +37,7 @@
   position: relative;
 }
 
-.AuthForm>h1 {
+.AuthForm > h1 {
   font-size: 2rem;
   color: rgb(0, 0, 0);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -114,12 +114,11 @@ button {
   /* margin-bottom: 1rem; */
   /* position: absolute; */
   bottom: 3.5rem;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:center;
-  gap:0.5rem;
-
+  align-items: center;
+  gap: 0.5rem;
 }
 .loginWith {
   height: fit-content;
@@ -127,8 +126,7 @@ button {
   margin-top: 0.8rem;
   margin-bottom: 1.4rem;
   bottom: 1rem;
-  position:relative;
-  
+  position: relative;
 }
 
 .line {
@@ -144,30 +142,32 @@ button {
   color: rgb(173, 171, 171);
   font-size: 0.9rem;
   background-color: white;
-  position:absolute;
-  top:-50%;
-  left:50%;
+  position: absolute;
+  top: -50%;
+  left: 50%;
   transform: translate(-50%);
 }
 
-
-.CreateAccBtn{
-  height:0.5rem;
-  width:fit-content;
-  color:rgb(77, 200, 248)
+.CreateAccBtn {
+  height: 0.5rem;
+  width: fit-content;
+  color: rgb(77, 200, 248);
 }
 
-.CreateAccBtn:hover{
-  color:rgb(44, 186, 242)
-
+.CreateAccBtn:hover {
+  color: rgb(44, 186, 242);
 }
-.CreateAccBtn:active{
-  color:rgb(21, 181, 245)
-
+.CreateAccBtn:active {
+  color: rgb(21, 181, 245);
 }
 
-@media only screen and (max-width:768px){
+@media only screen and (max-width: 1200px) {
+  .AuthWrapper {
+    height:55vh
+  }
+}
+@media only screen and (max-width: 1300px) {
   .AuthSection {
-  background-position-y:0rem;
-}
+    background-position-y: 0rem;
+  }
 }
